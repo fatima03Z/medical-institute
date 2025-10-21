@@ -78,44 +78,77 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      {mobileMenu && (
-        <div className="md:hidden bg-white shadow-md px-6 py-4 space-y-4 text-base">
-          <Link href="/" className={linkClasses("/")}>Home</Link>
-          <Link href="/about" className={linkClasses("/about")}>About</Link>
+     {/* Mobile Menu */}
+{mobileMenu && (
+  <div className="md:hidden bg-white shadow-md px-6 py-4 flex flex-col space-y-3 text-[15px] font-medium text-gray-800">
+    <Link href="/" className={`${linkClasses("/")} block`}>
+      Home
+    </Link>
+    <Link href="/about" className={`${linkClasses("/about")} block`}>
+      About
+    </Link>
 
-          {/* Mobile Dropdown */}
-          <div>
-            <button
-              className="flex items-center gap-1 w-full text-left hover:text-blue-600"
-              onClick={() => setOpenDropdown(!openDropdown)}
+    {/* Mobile Dropdown */}
+    <div>
+      <button
+        className="flex items-center justify-between w-full hover:text-blue-600"
+        onClick={() => setOpenDropdown(!openDropdown)}
+      >
+        <span>Courses</span>
+        <ChevronDown size={16} className={`${openDropdown ? "rotate-180 transition-transform" : ""}`} />
+      </button>
+      {openDropdown && (
+        <ul className="pl-4 mt-2 space-y-2">
+          <li>
+            <Link href="/courses" className={`${linkClasses("/courses")} block`}>
+              All Courses
+            </Link>
+          </li>
+          <li>
+            <Link href="/course-category" className={`${linkClasses("/course-category")} block`}>
+              Course Categories
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/courses/project-management"
+              className={`${linkClasses("/courses/project-management")} block`}
             >
-              Courses <ChevronDown size={16} />
-            </button>
-            {openDropdown && (
-              <ul className="pl-4 mt-2 space-y-2">
-                <li><Link href="/courses" className={linkClasses("/courses")}>All Courses</Link></li>
-                <li><Link href="/course-category" className={linkClasses("/course-category")}>Course Categories</Link></li>
-                <li><Link href="/courses/project-management" className={linkClasses("/courses/project-management")}>Project Management</Link></li>
-              </ul>
-            )}
-          </div>
-
-          <Link href="/diplomas" className={linkClasses("/diplomas")}>Diplomas</Link>
-          <Link href="/locations" className={linkClasses("/locations")}>Locations</Link>
-          <Link href="/jobs" className={linkClasses("/jobs")}>Jobs</Link>
-          <Link href="/consultation" className={linkClasses("/consultation")}>Consultation</Link>
-          <Link href="/inhouse-training" className={linkClasses("/inhouse-training")}>In-House Training</Link>
-          <Link href="/blogs" className={linkClasses("/blogs")}>Blogs</Link>
-
-          <Link
-            href="/contact"
-            className="block bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
-          >
-            Contact Us
-          </Link>
-        </div>
+              Project Management
+            </Link>
+          </li>
+        </ul>
       )}
+    </div>
+
+    <Link href="/diplomas" className={`${linkClasses("/diplomas")} block`}>
+      Diplomas
+    </Link>
+    <Link href="/locations" className={`${linkClasses("/locations")} block`}>
+      Locations
+    </Link>
+    <Link href="/jobs" className={`${linkClasses("/jobs")} block`}>
+      Jobs
+    </Link>
+    <Link href="/consultation" className={`${linkClasses("/consultation")} block`}>
+      Consultation
+    </Link>
+    <Link href="/inhouse-training" className={`${linkClasses("/inhouse-training")} block`}>
+      In-House Training
+    </Link>
+    <Link href="/blogs" className={`${linkClasses("/blogs")} block`}>
+      Blogs
+    </Link>
+
+    <Link
+      href="/contact"
+      className="block bg-blue-500 text-white text-center px-4 py-2 rounded-md hover:bg-blue-600"
+    >
+      Contact Us
+    </Link>
+  </div>
+)}
+
     </nav>
   );
 };
