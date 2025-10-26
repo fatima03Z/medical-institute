@@ -3,7 +3,15 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const blogs = [
+type BlogType = {
+  slug: string;
+  title: string;
+  desc: string;
+  full: string;
+  img: string;
+};
+
+const blogs: BlogType[] = [
   {
     slug: "healthcare-leadership",
     title: "The Future of Healthcare Leadership",
@@ -37,8 +45,9 @@ const blogs = [
 ];
 
 export default function BlogPage() {
-  const [activeSlug, setActiveSlug] = useState(null);
-  const selectedBlog = blogs.find(b => b.slug === activeSlug);
+  const [activeSlug, setActiveSlug] = useState<string | null>(null);
+  const selectedBlog = blogs.find((b) => b.slug === activeSlug);
+
 
   return (
     <section className="font-['Plus_Jakarta_Sans'] bg-white">
