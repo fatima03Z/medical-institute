@@ -2,6 +2,8 @@
 import Image from "next/image";
 import { useState } from "react";
 
+type DropdownType = "category" | "venue" | "duration" | "month" | null;
+
 const Hero = () => {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("Category");
@@ -9,7 +11,7 @@ const Hero = () => {
   const [duration, setDuration] = useState("Duration");
   const [month, setMonth] = useState("Month");
 
-  const [openDropdown, setOpenDropdown] = useState(null);
+  const [openDropdown, setOpenDropdown] = useState<DropdownType>(null);
 
   const categories = ["Management", "Finance", "Medical"];
   const venues = ["London", "Dubai", "Online"];
@@ -18,7 +20,6 @@ const Hero = () => {
 
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center font-['Plus_Jakarta_Sans']">
-      {/* Background Image */}
       <Image
         src="/images/herobg.png"
         alt="Hero Background"
@@ -27,11 +28,9 @@ const Hero = () => {
         className="object-cover -z-10"
       />
 
-      {/* Gradient Curve */}
       <div className="absolute right-0 top-0 w-[60%] h-full bg-gradient-to-b from-[#25B0F0]/40 via-[#1988BC]/40 to-[#073B53]/40 clip-path-curve" />
 
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between h-full px-4 sm:px-6">
-        {/* Left Text */}
         <div className="text-white max-w-lg z-10 text-center md:text-left mb-10 md:mb-0">
           <h1 className="font-['Plus_Jakarta_Sans'] text-3xl sm:text-4xl md:text-5xl font-bold leading-snug mb-6">
             Welcome to <br /> Medical Website <br /> Excellence Academy
@@ -41,13 +40,11 @@ const Hero = () => {
           </button>
         </div>
 
-        {/* Right Search Box */}
         <div className="w-full max-w-lg z-10 text-white">
           <h3 className="font-bold text-xl sm:text-2xl mb-6 text-center">
             Search Training Courses
           </h3>
 
-          {/* Search Input */}
           <input
             type="text"
             value={search}
@@ -56,7 +53,6 @@ const Hero = () => {
             className="w-full bg-white px-3 py-2 rounded-md mb-3 text-black focus:ring-2 focus:ring-[#25B0F0]"
           />
 
-          {/* Dropdowns */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
             {/* Category */}
             <div className="relative">
@@ -175,13 +171,10 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Submit */}
           <div className="flex justify-center sm:justify-start">
             <button
               onClick={() =>
-                alert(
-                  `Searching for: ${search}, ${category}, ${venue}, ${duration}, ${month}`
-                )
+                alert(`Searching: ${search}, ${category}, ${venue}, ${duration}, ${month}`)
               }
               className="flex justify-center items-center gap-2 w-[120px] bg-gradient-to-r from-[#03467c] to-[#1094d1] text-white py-3 rounded-4xl font-semibold hover:opacity-90 transition"
             >

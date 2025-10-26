@@ -39,10 +39,9 @@ export default function VenueSlider() {
           autoplay={{
             delay: 3000,
             disableOnInteraction: false,
-            pauseOnMouseEnter: true, // ✅ pause when hover
+            pauseOnMouseEnter: true,
           }}
           loop={true}
-          loopFillGroupWithBlank={true}
           spaceBetween={20}
           slidesPerGroup={1}
           breakpoints={{
