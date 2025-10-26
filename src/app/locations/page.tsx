@@ -37,7 +37,7 @@ export default function LocationsPage() {
           },
           {
             city: "london",
-            address: " Business Hub, Main Boulevard Gulberg, city",
+            address: "Business Hub, Main Boulevard Gulberg, city",
             phone: "+92 42 9876 5432",
             email: "london@myinstitute.com",
             map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3539.000000000000!2d74.3436!3d31.5204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919049f3d2b2e05%3A0x0000000000000000!2sGulberg%20Business%20Hub!5e0!3m2!1sen!2s!4v1695370015872!5m2!1sen!2s",
@@ -83,7 +83,7 @@ export default function LocationsPage() {
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
-                  allowFullScreen=""
+                  allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
