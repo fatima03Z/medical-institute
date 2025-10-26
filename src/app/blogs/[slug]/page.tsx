@@ -1,5 +1,11 @@
 import Image from "next/image";
 
+interface BlogPageProps {
+  params: {
+    slug: string;
+  };
+}
+
 const blogs = {
   "healthcare-trends-2025": {
     title: "Top Healthcare Management Trends in 2025",
@@ -32,7 +38,7 @@ const blogs = {
   },
 };
 
-export default function BlogDetails({ params }: { params: { slug: string } }) {
+export default function BlogDetails({ params }: BlogPageProps) {
   const blog = blogs[params.slug as keyof typeof blogs];
 
   if (!blog) {
@@ -54,8 +60,10 @@ export default function BlogDetails({ params }: { params: { slug: string } }) {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 md:px-12 py-16 text-gray-700 leading-relaxed text-justify">
-        {blog.content}
+      <div className="max-w-4xl mx-auto px-6 md:px-12 py-16 text-gray-700 leading-relaxed space-y-4 text-justify">
+        {blog.content.split("\n").map((line, index) => (
+          <p key={index}>{line.trim()}</p>
+        ))}
       </div>
     </section>
   );
