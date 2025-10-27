@@ -55,40 +55,20 @@ const courses = [
 export default function LatestCourses() {
   return (
     <section
-      className="py-18 px-10 relative overflow-hidden rounded-2xl"
+      className="py-18 px-4 sm:px-6 md:px-10 relative overflow-hidden rounded-2xl"
       style={{ backgroundColor: "#457B9D1A" }}
     >
-      {/* SVG background with closer lines */}
+      {/* SVG background */}
       <svg
         className="absolute top-0 bottom-30 left-0 w-full h-full opacity-40"
         xmlns="http://www.w3.org/2000/svg"
         preserveAspectRatio="none"
         viewBox="0 0 800 400"
       >
-        <path
-          d="M0,80 C200,150 400,50 800,80"
-          fill="none"
-          stroke="#457B9D"
-          strokeWidth="1"
-        />
-        <path
-          d="M0,160 C300,230 500,120 800,160"
-          fill="none"
-          stroke="#457B9D"
-          strokeWidth="1"
-        />
-        <path
-          d="M0,240 C400,310 600,190 800,240"
-          fill="none"
-          stroke="#457B9D"
-          strokeWidth="1"
-        />
-        <path
-          d="M0,320 C500,390 700,260 800,320"
-          fill="none"
-          stroke="#457B9D"
-          strokeWidth="1"
-        />
+        <path d="M0,80 C200,150 400,50 800,80" fill="none" stroke="#457B9D" strokeWidth="1" />
+        <path d="M0,160 C300,230 500,120 800,160" fill="none" stroke="#457B9D" strokeWidth="1" />
+        <path d="M0,240 C400,310 600,190 800,240" fill="none" stroke="#457B9D" strokeWidth="1" />
+        <path d="M0,320 C500,390 700,260 800,320" fill="none" stroke="#457B9D" strokeWidth="1" />
       </svg>
 
       <h2 className="relative text-[#073B53] text-2xl font-bold mb-6 z-10">
@@ -97,11 +77,12 @@ export default function LatestCourses() {
 
       {/* Scrollable Cards */}
       <div
-        className="relative flex gap-4 overflow-x-auto pb-4 z-10 scrollbar-thin 
-        scrollbar-thumb-[#073B53]/60 scrollbar-track-gray-200 snap-x snap-mandatory"
+        className="relative flex gap-4 overflow-x-auto pb-4 z-10 snap-x snap-mandatory
+        scrollbar-thin scrollbar-thumb-[#073B53]/60 scrollbar-track-gray-200 
+        sm:pl-4 md:pl-0"
       >
         {courses.map((course) => (
-          <div key={course.id} className="snap-start">
+          <div key={course.id} className="snap-start shrink-0">
             <CourseCard course={course} />
           </div>
         ))}

@@ -56,14 +56,15 @@ const CourseCard = ({ course }: { course: Course }) => {
         </div>
 
         {/* Register button with dynamic link */}
-        <div className="flex justify-end">
-          <Link
-            href={`/registration/${course.slug}`}
-            className="px-4 py-2 text-sm bg-gradient-to-r from-[#073B53] via-[#25B0F0] to-[#B9D6F2] text-white rounded-md font-semibold hover:opacity-90 transition focus:outline-none"
-          >
-            Register
-          </Link>
-        </div>
+<div className="flex justify-end">
+  <Link
+    href={`/registration?course=${encodeURIComponent(course.title)}`}
+    className="px-4 py-2 text-sm bg-gradient-to-r from-[#073B53] via-[#25B0F0] to-[#B9D6F2] text-white rounded-md font-semibold hover:opacity-90 transition focus:outline-none"
+  >
+    Register
+  </Link>
+</div>
+
       </div>
 
       {/* Bottom Blue Line */}

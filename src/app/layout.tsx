@@ -9,7 +9,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
-  title: "London Medical",
+  title: "Medical Institute",
   description: "Healthcare Website",
 };
 
